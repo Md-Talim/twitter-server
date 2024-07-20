@@ -4,20 +4,25 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start": "node build/index",
-    "build": "tsc -p .",
-    "dev": "tsc-watch --onSuccess \"npm start\""
+    "start": "bun run build/index.js",
+    "build": "bun run tsc -p .",
+    "dev": "tsc-watch --onSuccess 'bun run start'"
   },
   "devDependencies": {
+    "@types/cors": "^2.8.17",
+    "@types/jsonwebtoken": "^9.0.6",
     "tsc-watch": "^6.2.0",
     "typescript": "^5.5.3"
   },
   "dependencies": {
     "@apollo/server": "^4.10.4",
     "@prisma/client": "^5.16.2",
+    "axios": "^1.7.2",
     "body-parser": "^1.20.2",
+    "cors": "^2.8.5",
     "express": "^4.19.2",
     "graphql": "^16.9.0",
+    "jsonwebtoken": "^9.0.2",
     "prisma": "^5.16.2"
   }
 }
